@@ -1,4 +1,4 @@
-package com.product.v1.application.usecases;
+package com.product.v1.application.usecases.createproduct;
 
 import com.product.v1.application.gateways.CreateProductUseCaseGateway;
 import com.product.v1.domain.Product;
