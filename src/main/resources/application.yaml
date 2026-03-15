@@ -1,3 +1,45 @@
 spring:
   application:
-    name: v1
+    name: cache-aside-redis-poc
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cache_poc
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: public
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 2000ms
+
+  cache:
+    type: redis
+    redis:
+      time-to-live: 10m
+      cache-null-values: false
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.data.redis: INFO
+    org.springframework.cache: INFO
+    org.hibernate.SQL: INFO
+
+app:
+  cache:
+    featured-categories:
+      key: featured_categories
+      ttl: 10m
