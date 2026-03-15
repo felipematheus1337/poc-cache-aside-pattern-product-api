@@ -19,7 +19,7 @@ public class CategoryEntity {
 
     private String name;
 
-    private boolean isFeatured;
+    private boolean featured;
 
     private String type;
 
@@ -40,11 +40,11 @@ public class CategoryEntity {
     }
 
     public boolean isFeatured() {
-        return isFeatured;
+        return featured;
     }
 
     public void setFeatured(boolean featured) {
-        isFeatured = featured;
+        this.featured = featured;
     }
 
     public String getType() {
